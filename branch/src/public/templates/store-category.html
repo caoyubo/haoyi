@@ -1,0 +1,24 @@
+<ion-view class="store-category" view-title="搜索">
+    <ion-nav-buttons side="right">
+        <button class="button  icon ion-ios-cart-outline button-clear" ui-sref="tab.cart">   <!-- 使按钮点击可以弹出左侧边栏 -->
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="store-category-content ">
+        <div class="list list-inset">
+            <label class="item item-input" ui-sref="store-search">
+                <label class="search-btn"><i class="icon ion-search placeholder-icon"></i></label>
+                <input type="text" placeholder="搜索">
+            </label>
+        </div>
+
+        <div class="store-category-list-1 padding-left padding-right" ng-repeat="classItem in storeInfo">
+            <div class="row " style="background: #dcdedd">
+                <div class="col">{{classItem.goods_class.name}}</div>
+            </div>
+            <ul class="store-category-list-2 light-bg" ng-if="classItem.goods_class.childs.length>0">
+                <li ng-repeat="childClassItem in classItem.goods_class.childs">{{childClassItem.name}}</li>
+            </ul>
+        </div>
+
+    </ion-content>
+</ion-view>

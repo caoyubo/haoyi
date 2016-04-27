@@ -1,0 +1,17 @@
+{
+  "code": "0",
+  "num": "10011",
+  "mes": "返回成功",
+  "data": {
+    "id": 1,
+    "uid": "testuid",
+    "title": "恭喜你中奖了",
+    "content": "jsakldahsdaskdh",
+    "ptype": null,
+    "status": 1,
+    "createTime": null,
+    "readTime": 1460807191000,
+    "remark": null
+  },
+  "version": "VERSION1.0"
+}

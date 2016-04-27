@@ -1,0 +1,91 @@
+<ion-view view-title="订单详情" class="order-detail gray-bg">
+  <!--<ion-nav-buttons side="left">
+    <a href="javascript:history.back(-1)" class="button button-icon icon ion-ios-arrow-thin-left" nav-direction="back"></a>
+  </ion-nav-buttons>-->
+  <ion-content class="order-detail-content gray-bg">
+
+    <div class="head padding" ng-if="(orderDetail.orderResp.orderStatus == '10')">
+      未付款
+    </div>
+    <div class="head padding" ng-if="(orderDetail.orderResp.orderStatus == '0')">
+      已取消
+    </div>
+    <div class="head padding" ng-if="(orderDetail.orderResp.orderStatus == '20')">
+      已付款
+    </div>
+    <div class="head padding" ng-if="(orderDetail.orderResp.orderStatus == '30')">
+      已发货
+    </div>
+    <div class="head padding" ng-if="(orderDetail.orderResp.orderStatus == '40')">
+      交易成功
+    </div>
+
+    <div class="list">
+      <a class="item item-icon-left item-icon-right" ui-sref="detail-logistics">
+        <i class="icon ion-android-car" style="color:#50a009"></i>
+        <p style="color:#50a009">快件正常签收，签收人是...</p>
+        <p style="font-size:10px;color:#444;">2016-02-15</p>
+        <i class="icon ion-ios-arrow-forward" style="color:#6c6d6b"></i>
+      </a>
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-location" style="color:#6c6d6b"></i>
+        <p>收货人：ljm <span style="float: right">13411234567</span></p>
+        <p>收货地址：广东省广州市天河区长兴街道岑村红花岗</p>
+      </a>
+    </div>
+
+    <div class="list">
+      <div class="item item-divider light-bg">
+        {{orderDetail.orderResp.shoname}}
+        <!--<span style="float: right" class="positive">待付款</span>-->
+      </div>
+      <a class="item row-no-padding gray-bg" ng-repeat="item in orderDetail.orderGoods">
+        <div class="row">
+          <div class="col order-goods-item">
+            <div class="order-goodsImg-panel"> <img src="{{imgUrl}}{{item.goodsImage}}"> </div>
+          </div>
+          <div class="col">{{item.goodsName}}</div>
+          <div class="col" style="text-align: right;">X{{item.goodsNum}}</div>
+        </div>
+      </a>
+      <!--<div class="item item-divider light-bg padding-top padding-bottom text-right">
+        <button class="button button-small button-outline button-energized btn-w-70">
+          申请售后
+        </button>
+      </div>-->
+      <div class="item">
+        <div class="row row-no-padding light-bg">
+          <div class="col">
+            <p>运费险<span style="float:right">￥0.20</span></p>
+            <p>运费<span style="float:right">￥0.00</span></p>
+            <p>实付款（含运费）<span style="float:right;color:red">￥199.6</span></p>
+          </div>
+        </div>
+      </div>
+      <!--<div class="item">
+        <div class="row light-bg text-center">
+          <div class="col">
+            <button class="button button-outline button-energized icon-left ion-ios-chatbubble-outline">联系卖家</button>
+          </div>
+          <div class="col">
+            <button class="button icon-left button-outline button-energized ion-ios-telephone-outline">拨打电话</button>
+          </div>
+        </div>
+      </div>-->
+    </div>
+
+    <div class="list">
+      <div class="item">
+        <div class="row row-no-padding light-bg">
+          <div class="col">
+            <p>订单号：{{orderDetail.orderResp.orderSn}}</p>
+            <p ng-if="(orderDetail.orderResp.paySn!=null)">支付宝交易号：{{orderDetail.orderResp.paySn}}</p>
+            <p ng-if="(orderDetail.orderResp.addTime!=null)">创建时间：{{orderDetail.orderResp.addTime}}</p>
+            <p ng-if="(orderDetail.orderResp.paymentTime!=null)">付款时间：{{orderDetail.orderResp.paymentTime}}</p>
+            <p ng-if="(orderDetail.orderResp.finnshedTime!=null)">成交时间：{{orderDetail.orderResp.finnshedTime}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

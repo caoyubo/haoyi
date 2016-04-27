@@ -1,0 +1,187 @@
+<ion-view class="user" view-title="我的">
+ <!-- <ion-nav-buttons side="left">
+    <img src="img/logo.png" menu-toggle="left" class="nav-left-logo"/>
+  </ion-nav-buttons>-->
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-ios-cart-outline button-clear" ng-click="isLogin('cart')"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="user-content">
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <div class="user-wrap integral-panel">
+      <div class="row">
+        <div class="col col-70">
+          <span class="userName">{{user.phone}}</span>
+          <span class="huiyuan">{{level.levelname}}&nbsp;级</span>
+          <div style="color:#ffffff;">我的资产</div>
+        </div>
+        <div class="col col-30 text-center">
+          <i class="icon ion-ios-email-outline" style="font-size: 30px;" ui-sref="message" nav-direction="forward"></i>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-60">
+          <div class="jifen">钻石积分</div>
+          <div class="Integral" ng-if="diamond.availBal">￥{{diamond.availBal}}</div>
+          <div class="Integral" ng-if="diamond.availBal == null">￥0</div>
+        </div>
+        <div class="col col-40 text-center" style="border-left:1px solid #ffffff;">
+          <div class="jifen">翡翠积分</div>
+          <div class="Integral" style="font-size: 14px;" ng-if="integral.point">￥{{integral.point}}</div>
+          <div class="Integral" style="font-size: 14px;" ng-if="integral.point==null">￥0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-tabs">
+      <div class="button-bar">
+        <a class="button" ui-sref="integral" nav-direction="forward">
+          <p><img src="img/jifenguanli.png" style="width:30px;height:auto"> </p>
+          <p>钻石积分管理</p>
+        </a>
+        <a class="button" ui-sref="deposit_2" nav-direction="forward">
+          <p><img src="img/kuaisuchongzhi.png" style="width:30px;height:auto"></p>
+          <p>快速充值</p>
+        </a>
+        <a class="button" ui-sref="my-fake-score" nav-direction="forward">
+          <p><img src="img/jiajifen.png" style="width:30px;height:auto"></p>
+          <p>翡翠积分管理</p>
+        </a>
+      </div>
+    </div>
+
+
+    <div class="user-order  padding-top">
+      <div class="user-tabs">
+        <div class="button-bar">
+          <a class="button" ui-sref="order" nav-direction="forward">
+            <span class="badgeNum">23</span>
+            <p><img src="img/daizhifu.png" style="width:30px;height:auto"></p>
+            <p>待支付</p>
+          </a>
+          <a class="button" ui-sref="order" nav-direction="forward">
+            <p><img src="img/daifahuo.png" style="width:30px;height:auto"></p>
+            <p>待发货</p>
+          </a>
+          <a class="button" ui-sref="order" nav-direction="forward">
+            <p><img src="img/daishouhuo.png" style="width:30px;height:auto"></p>
+            <p>待收货</p>
+          </a>
+        </div>
+      </div>
+      <ul class="list">
+        <li class="item">
+          <ul class="user-list padding-top padding-bottom">
+            <li class="user-item">
+              <a ui-sref="order" nav-direction="forward">
+              <i class="icon ion-navicon-round energized"></i>
+              <span>全部订单</span>
+              </a>
+            </li>
+            <li class="user-item">
+              <a ui-sref="order" nav-direction="forward">
+              <i class="icon ion-chatbubble-working energized"></i>
+              <span>评价已买的商品</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--<div class="user-order">
+      <ul class="list padding-top">
+        <li class="item tit">积分管理</li>
+        <li class="item">
+          <ul class="user-list padding-top padding-bottom">
+            <li class="user-item">
+              <i class="icon ion-social-usd energized"></i>
+              <a href="#/tab/integral"><span>我的积分</span></a>
+            </li>
+            <li class="user-item">
+              <i class="icon ion-briefcase energized"></i>
+              <a href="#/tab/deposit"><span>充值</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>-->
+
+    <div class="user-order user-haoyi">
+      <ul class="list padding-top">
+        <li class="item tit">我的好一</li>
+        <li class="item">
+          <ul class="user-list padding-top padding-bottom">
+            <li class="user-item">
+              <a ui-sref="recent-look" nav-direction="forward">
+                <p><i class="icon ion-ios-clock-outline energized"></i></p>
+                <p>最近查看</p>
+              </a>
+            </li>
+            <li class="user-item">
+              <a ui-sref="collect" nav-direction="forward">
+                <p><i class="icon ion-ios-heart-outline energized"></i></p>
+                <p>我的收藏</p>
+              </a>
+            </li>
+            <!--<li class="user-item">
+              <a ui-sref="after-service" nav-direction="forward">
+                <p><i class="icon ion-ios-filing-outline energized"></i></p>
+                <p>售后服务</p>
+              </a>
+            </li>
+            <li class="user-item">
+              <a ui-sref="my-task" nav-direction="forward">
+                <p><i class="icon ion-ios-albums-outline energized"></i></p>
+                <p>我的任务</p>
+              </a>
+            </li>-->
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="businessCenter" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>商家中心</a></li>
+      </ul>
+    </div>
+
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="set-account" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>账户设置</a></li>
+      </ul>
+    </div>
+
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="code" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>我的邀请码</a></li>
+      </ul>
+    </div>
+
+    <!--<div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="references" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>推荐人列表</a></li>
+      </ul>
+    </div>-->
+
+    <div class="user-order">
+      <ul class="list padding-top">
+        <li class="item tit">联系我们</li>
+        <li class="item">
+          <ul class="user-list padding-top padding-bottom">
+            <li class="user-item">
+              <i class="icon ion-ios-people-outline energized"></i>
+              <span>好一客服</span>
+            </li>
+            <li class="user-item">
+              <i class="icon ion-ios-compose-outline energized"></i>
+              <span>意见反馈</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+
+</ion-view>

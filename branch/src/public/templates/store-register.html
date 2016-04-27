@@ -1,0 +1,45 @@
+<ion-view title="创建店铺" class="store-register">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.home" nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-content class="store-register-content">
+    <form>
+      <div class="row">
+        <div class="col col-70">
+          <p>店铺名</p>
+          <p><input type="text" placeholder="店铺名"></p>
+        </div>
+        <div class="col col-25 col-offset-4 text-center">
+          <div class="store-logo">
+            <img src="img/store-logo.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <p>真实姓名</p>
+          <p><input type="text" placeholder="真实姓名"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>身份证号码</p>
+          <p><input type="text" placeholder="身份证号码"></p>
+        </div>
+      </div>
+    </form>
+
+    <div class="law text-center">法律声明</div>
+    <div class="yesOrno">
+      <input type="checkbox"/>&nbsp;我已同意.......
+    </div>
+
+
+    <div class="next padding">
+        <button class="button button-full button-dark" ui-sref="store-register2">
+          下一步
+        </button>
+    </div>
+  </ion-content>
+</ion-view>

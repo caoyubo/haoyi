@@ -1,0 +1,235 @@
+<ion-view view-title="商品详情" class="detail" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <back-nav></back-nav>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button icon ion-ios-cart-outline button-clear" ng-click="isLogin('cart')"></button>
+    <button class="button button-clear" ui-sref="evaluation-list({goodsId : detail.goods.id })">评价</button>
+  </ion-nav-buttons>
+
+  <ion-content class="detail-content">
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <!--图片轮番效果-->
+    <ion-slide-box does-continue="true" slide-interval="2000" auto-play="false" class="home-slide" show-pager="false">
+      <ion-slide>
+        <a href="#">
+          <img src="{{imgUrl}}{{detail.goods.goodsimg}}" width="100%">
+        </a>
+      </ion-slide>
+      <!--<ion-slide>
+        <a href="#">
+          <img src="img/rush_bg.png" width="100%">
+        </a>
+      </ion-slide>-->
+    </ion-slide-box>
+    <!--图片轮番效果 end-->
+    <div class="detail-goods">
+      <div class="row">
+        <div class="col col-90">
+          {{detail.goods.goodsname}}
+        </div>
+        <div class="col col-10" style="font-size: 30px;">
+          <a class=" icon ion-ios-arrow-right" style="color:#c9c9c9;"></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col assertive">
+          <!--快递京东-->{{detail.goods.goodsbrief}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-70 assertive" style="font-size: 20px;">
+          ￥{{detail.goods.shopprice}}&nbsp;&nbsp;&nbsp;<span style="color: #444;font-size: 14px;">库存({{detail.goods.goodsnumber}})</span>
+        </div>
+        <div class="col col-30 text-right">
+          <!-- <button class="button button-small button-outline">
+             降价通知
+           </button>-->
+        </div>
+      </div>
+
+      <div  style="border: 1px solid #f1f2f3;margin:10px 0px 10px 0px;" ng-show="(detail.goods_spec.length==0)||(detail.goods_spec==null)">
+        <div class="spec-list-panel buy-num-panel row" >
+          <div class="col col-30 text-left">购买数量</div>
+          <div class="col col-70 text-left">
+            <a class="minus text-center" ng-click="minus()">-</a>
+            <span class="text-center">{{buyNum}}</span>
+            <a class="plus text-center" ng-click="plus()">+</a>
+          </div>
+        </div>
+      </div>
+      <!-- ng-show="detail.goods_spec.length!=0"-->
+      <div class="list" ng-show="detail.goods_spec.length!=0">
+        <div class="item item-icon-right" ng-click="openModal()">
+          <i class=" icon ion-ios-arrow-right" style="color:#c9c9c9;"></i>
+          <label class="padding-right" style="color: #b6b6b6;">已选</label>
+          <span ng-if="(specText == '')" style="font-size:14px;">请选择规格</span>
+          <span ng-if="(specText != '')" style="font-size:14px;">{{specText}}</span>
+        </div>
+      </div>
+      <div class="row responsive-sm hide">
+        <div class="col text-left" style="border:1px solid #d2d2d2">
+          <p class="text-left" style="font-size: 16px">预售中</p>
+          <p class="text-center">限量：100</p>
+          <p class="range"></p>
+          <p style="font-size: 12px">100%已售罄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;剩余时间：07小时22分钟</p>
+          <p style="text-decoration: line-through;color:#bdbdbd">原价：￥588.00</p>
+          <p class="text-center" ><button class="presale_btn text-left" type="button">预售优惠价：￥188.00</button><i class="ion-btn"></i> </p>
+        </div>
+      </div>
+      <div class="row detail-Transport">
+        <div class="col">
+          <div class="row responsive-sm ">
+            <div class="col col-70">
+              <label class="padding-right" style="color: #b6b6b6;">发货地</label>
+              <span>广东 广州 花都</span>
+            </div>
+            <div class="col">
+              <label class="padding-right" style="color: #b6b6b6;">运费</label>
+              <span>免运费</span>
+            </div>
+            <div class="col">
+              <label class="padding-right" style="color: #b6b6b6;">服务</label>
+              <span>由衣二三四诗官方</span>
+            </div>
+            <div class="col">
+              <label class="padding-right" style="color: #b6b6b6;">提示</label>
+              <span>致辞7天无理由退货</span>
+            </div>
+          </div>
+        </div>
+        <div class="col col-30">
+          <button class="button button-balanced button-small">一键代理</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-top-10">
+      <div class="col"><h3>商品详情</h3></div>
+    </div>
+    <div class="row">
+      <div class="col">产品名称：{{detail.goods.goodsname}}</div>
+      <div class="col">产品品牌：{{detail.goods.brandname}}</div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+      <div class="col col-20"><img src="{{detail.goods.shoplogo}}" style="width:50px;height:50px"> </div>
+      <div class="col" style="font-weight: bold; font-size:12px;line-height: 50px; ">{{detail.goods.shopname}}</div>
+      <div class="col" style="color:#999999;font-size:12px;line-height: 50px;">店铺等级：{{detail.goods.shopverfiy}}</div>
+    </div>
+
+    <!--<div class="row detail-goods-evaluate text-center">
+      <div class="col col-30 allgoods">
+        <p>全部商品</p>
+        <p>{{detail.goods.goodsnumber}}个</p>
+      </div>
+      <div class="col col-30 follownum">
+        <p>关注人数</p>
+        <p>233万</p>
+      </div>
+      <div class="col col-40 service-evaluate">
+        <p>描述相符：97%</p>
+        <p>服务态度：89%</p>
+        <p>描述相符：95%</p>
+      </div>
+    </div>-->
+    <div class="row text-center detail-row-1">
+      <div class="col" ui-sref="store({shopid:detail.goods.shopid })"><p><img src="img/store.png">进店逛逛</p></div>
+      <!-- <div class="col"><p><img src="img/customer-service.png">联系客服</p></div>-->
+    </div>
+    <div class="row text-center detail-row-2">
+      <div class="col">
+        <p class="text-center"><img src="img/indemnify.png"></p>
+        <p>正品保障</p>
+      </div>
+      <div class="col">
+        <p><img src="img/baoyou.png"></p>
+        <p>包邮配送</p>
+      </div>
+      <div class="col">
+        <p><img src="img/fahuo.png"></p>
+        <p>闪电发货</p>
+      </div>
+      <div class="col">
+        <p><img src="img/7days.png"></p>
+        <p>7天退换</p>
+      </div>
+    </div>
+    <div class="row text-center  padding-bottom detail-row-3" style="margin-top: 10px;">
+      <div class="col padding-top">
+        联系客服：4000-0000-9900
+      </div>
+    </div>
+
+    <p style="line-height: 40px;text-align: center;color: #727171;">继续拖动,查看图文详情</p>
+  </ion-content>
+  <div class="cart-comm detail-tabs">
+    <div class="row text-center">
+      <div class="col col-25 text-center">
+        <button class="button button-full button-assertive button-icon icon ion-ios-heart-outline " ng-click="collect()" style="margin-top:0px;background:#e60012;"></button>
+      </div>
+      <div class="col col-40 text-center" style="font-weight: bold">
+        <button class="button button-full light" ng-click="addCart()" nav-direction="forward" style="margin-top: 0px;background: #f39800;">
+          加入购物车
+        </button>
+      </div>
+      <div class="col col-35">
+        <button class="button button-full light" nav-direction="forward" ng-click="buyNow()" style="margin-top: 0px;background: #eb6100;">
+          立即购买
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 选择规格的对话框 -->
+  <script id="spec-modal.html" type="text/ng-template">
+    <ion-modal-view class="model-panel spec-model">
+      <div class="row row-no-padding padding-left padding-right">
+        <div class="col col-25">
+          <div class="spec-img-panel">
+            <img src="{{imgUrl}}{{detail.goods.goodsimg}}">
+          </div>
+        </div>
+        <div class="col col-55 spec-info padding-left padding-top">
+          <p style="color: red">￥{{detail.goods.shopprice}}</p>
+          <p>库存{{detail.goods.goodsnumber}}件</p>
+          <p ng-if="(specText == '')">请选择规格</p>
+          <p ng-if="(specText != '')">{{specText}}</p>
+        </div>
+        <div class="col col-20 text-right">
+          <i class="icon ion-ios-close-outline" style="font-size:30px; color:#444" ng-click="closeModal()"></i>
+        </div>
+      </div>
+      <ion-scroll direction="y" scrollbar-y="true" style="height:70%;">
+        <div class="spec-list-panel" ng-repeat="specItem in detail.goods_spec">
+          <div class="spec-tit padding-left text-left">{{specItem.attrname}}</div>
+          <ul class="padding-left padding-right">
+            <li ng-repeat="specAttr in specItem.attributeValues" ng-class="{'active':specAttr.selected}" ng-click="chooseSpec(specItem.id,specAttr.id)">{{specAttr.attrvaluename}}</li>
+          </ul>
+        </div>
+
+        <div class="spec-list-panel buy-num-panel row">
+          <div class="col text-left">购买数量</div>
+          <div class="col text-right">
+            <a class="minus text-center" ng-click="minus()">-</a>
+            <span class="text-center">{{goodsNum}}</span>
+            <a class="plus text-center" ng-click="plus()">+</a>
+          </div>
+        </div>
+      </ion-scroll>
+
+
+      <div class="spec_btn row row-no-padding">
+        <div class="col">
+          <button class="button button-full button-energized" ng-click="addCart()">加入购物车</button>
+        </div>
+        <div class="col">
+          <button class="button button-full button-assertive" ng-click="buyNow()">立即购买</button>
+        </div>
+      </div>
+    </ion-modal-view>
+  </script>
+
+</ion-view>
+

@@ -1,0 +1,20 @@
+<ion-view class="message" view-title="消息内容">
+    <ion-content class="message-content">
+        <div class="row">
+            <div class="col">
+                <span style="font-size: 16px;font-weight:bold;">{{bill.title}}</span>
+                <span style="float: right">{{bill.createTime}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {{bill.content}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+               <button class="button button-full button-assertive" ng-click="messageDel()">删除</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

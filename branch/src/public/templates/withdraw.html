@@ -1,0 +1,29 @@
+<ion-view class="withdraw" view-title="提现">
+  <ion-content class="withdraw-content padding-left padding-right">
+    <form name="cardForm" role="form" novalidate="novalidate">
+      <div class="withdraw-info row responsive-sm">
+        <div class="col">
+          <div class="row row-no-padding">
+            <div class="col col-40">到账的账户</div>
+            <div class="col col-60 calm">{{bankCardInfoReq.bankName}}({{bankCardInfoReq.bankNum}})</div>
+          </div>
+        </div>
+        <div class="col">提现金额</div>
+        <div class="col" style="font-size: 26px;font-weight: bold;"><span>￥</span><input type="number" placeholder=" 输入提现的金额" ng-model="PointsWaitDrawalsReq.point" name="point" required ng-change="withdraw.change()">
+        </div>
+        <p class="error assertive" ng-show="cardForm.point.$dirty&&cardForm.point.$error.required">充值的金额不能为空！</p>
+      </div>
+      <div class="withdraw-deposit row " style="font-size: 12px;">
+        <div class="col col-100" style="font-size: 12px;width:60%;color:#e1652e;" >可用钻石积分￥{{diamond.availBal}}</div>
+        <div class="col col-100" style="font-size: 12px;width:60%;color:#e1652e;" >冻结钻石积分￥{{diamond.frozenBal}}</div>
+        <!--<div class="col col-40 text-right"><a href="#/chooseAccount" class="button button-small button-clear button-positive">全部提现</a></div>-->
+      </div>
+      <div class="row withdraw-directions" style="font-size: 12px;">
+        <div class="col text-center" style="font-size: 12px;width:60%;color:#aeabab;" >手续费说明</div>
+      </div>
+      <div class="row row-no-padding padding-top">
+        <button class="button button-full button-dark" ng-click="withdraw.embody(cardForm)" >提现</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

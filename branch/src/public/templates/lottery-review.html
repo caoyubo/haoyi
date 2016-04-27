@@ -1,0 +1,20 @@
+<ion-view class="lottery-review" view-title="往期回顾">
+  <ion-content class="lottery-review-content">
+    <div class="list" ng-repeat="item in lotteryHistory.list">
+      <div class="item item-divider">
+       {{item.lotterytime}}期<span style="float:right;">中奖号：{{item.lotteryno}}</span>
+      </div>
+      <a class="item" ng-repeat="itemU in item.lotteryList">
+        <div class="row row-no-padding">
+          <div class="col col-40">
+            {{itemU.uname}}
+          </div>
+          <div class="col col-60">
+            {{itemU.hidenphone}}
+          </div>
+        </div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
+

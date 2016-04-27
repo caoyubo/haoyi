@@ -1,0 +1,32 @@
+<ion-view class="address" view-title="收货地址">
+
+  <ion-content class="address-content">
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <div class="address-list">
+      <div class="address-item" ng-class="{'address-selected':choice}" ng-repeat="addressItem in addressList">
+        <div class="edit-address"><a href="#/address-edit/{{addressItem.id}}" class="button icon ion-ios-compose-outline"></a></div>
+        <ion-radio ng-model="choice" ng-value="addressItem.id"  ng-change="setDefaultAddress(addressItem.id)">
+          <p> <span>{{addressItem.consignee}}</span>&nbsp;&nbsp;&nbsp;<span>{{addressItem.mobile}}</span></p>
+          <p><span class="default" ng-if="addressItem.pdefault==1">默认</span>{{addressItem.addressName}}{{addressItem.address}}</p>
+        </ion-radio>
+      </div>
+    </div>
+  </ion-content>
+
+  <div class="address-add">
+    <button class="button button-full button-assertive" ui-sref="address-edit">
+      新增收货地址
+    </button>
+  </div>
+</ion-view>
+
+
+
+
+
+
+
+
+
+

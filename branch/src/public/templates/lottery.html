@@ -1,0 +1,60 @@
+<ion-view class="lottery" view-title="今日抽奖">
+    <ion-nav-buttons side="left">
+        <back-nav></back-nav>
+    </ion-nav-buttons>
+    <ion-content class="lottery-content">
+        <div class="lottery-top">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="assertive" style="font-size: 30px;letter-spacing:5px;">{{lottery.lotteryno}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center assertive">
+                    现金:{{lottery.bonus}}元
+                </div>
+            </div>
+        </div>
+
+        <div class="lottery-panel margin-top-10">
+            <div class="row">
+                <div class="col" style="font-weight:bold">
+                    今日抽奖
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <table class="lottery-table">
+                        <tr>
+                            <th>用户</th>
+                            <th>中奖号码</th>
+                            <th>奖品</th>
+                        </tr>
+                        <tr ng-repeat="item in lottery.lotteryList">
+                            <td>{{item.uname}}</td>
+                            <td>{{item.hidenphone}}</td>
+                            <td>itui{{item.lotterysum}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row directions">
+                <div class="col">
+                    说明：给他任何一条发热一个
+                </div>
+            </div>
+        </div>
+
+        <div class="margin-top-10">
+            <div class="row review">
+                <div class="col text-center">
+                    上期号码<span>{{lotteryYes.lotteryno}}</span>回顾 <i class="icon ion-log-in assertive"
+                                                                   ui-sref="lottery-review" nav-direction="forward"></i>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+
+

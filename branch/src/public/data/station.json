@@ -1,0 +1,57 @@
+{
+  "code": "0",
+  "num": "100010",
+  "mes": "成功返回数据",
+  "data": {
+    "pageNum": 1,
+    "pageSize": 2,
+    "size": 2,
+    "startRow": 1,
+    "endRow": 2,
+    "total": 14,
+    "pages": 7,
+    "list": [
+      {
+        "id": 1,
+        "uid": "testuid",
+        "title": "恭喜你中奖了",
+        "content": "jsakldahsdaskdh",
+        "ptype": null,
+        "status": 1,
+        "createTime": null,
+        "readTime": 1460807191000,
+        "remark": null
+      },
+      {
+        "id": 2,
+        "uid": "testuid",
+        "title": "恭喜你中奖了",
+        "content": "jsakldahsdaskdh",
+        "ptype": null,
+        "status": 0,
+        "createTime": null,
+        "readTime": null,
+        "remark": null
+      }
+    ],
+    "firstPage": 1,
+    "prePage": 0,
+    "nextPage": 2,
+    "lastPage": 7,
+    "isFirstPage": true,
+    "isLastPage": false,
+    "hasPreviousPage": false,
+    "hasNextPage": true,
+    "navigatePages": 8,
+    "navigatepageNums": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "version": "VERSION 1.0"
+}

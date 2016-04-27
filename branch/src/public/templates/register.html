@@ -1,0 +1,79 @@
+<ion-view view-title="用户注册" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a href="javascript:history.back(-1)" class="button button-icon icon ion-ios-arrow-thin-left" nav-direction="back"></a>
+  </ion-nav-buttons>
+
+
+<!--  <ion-nav-buttons side="right">
+    <button  class="button button-icon icon ion-qr-scanner" ng-click="scanCode()"></button>
+  </ion-nav-buttons>-->
+
+
+
+  <ion-content class="">
+    <div class="list list-inset">
+      <label class="login-title">
+        <h3 class="title">创建用户</h3>
+      </label>
+      <form name="userForm" id="userForm" role="form" novalidate="novalidate">
+        <div id="user-info" class="user-info">
+
+          <div class="row text-center">
+            <div class="col">
+              <label class="item item-input">
+                <input type="text" placeholder="用户推荐码" ng-model="user.code" name="code">
+              </label>
+            </div>
+            <div class="col">
+              <button class="button" style="background:#f39800;color: #ffffff;">
+                用户推荐码
+              </button>
+            </div>
+          </div>
+
+
+          <label class="item item-input">
+            <input type="text" placeholder="用户名,至少6个字母与数字的组合" ng-model="user.username" name="userName" required>
+          </label>
+          <p class="error" ng-show="userForm.userName.$dirty&&userForm.userName.$error.required">账号不能为空！</p>
+          <label class="item item-input">
+            <input type="text" placeholder="手机号码" ng-model="user.phone" name="userPhone" required ng-pattern="/^(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/">
+          </label>
+          <p class="error" ng-show="userForm.userPhone.$dirty&&userForm.userPhone.$error.required">手机号码不能为空！</p>
+          <p class="error" ng-show="userForm.userPhone.$dirty&&userForm.userPhone.$error.pattern">手机号码格式不正确！</p>
+          <div class="row text-center">
+            <div class="col">
+              <label class="item item-input">
+                <input type="text" placeholder="验证码" ng-model="user.rcode" name="userRcode" required>
+              </label>
+            </div>
+            <div class="col">
+              <button class="button  button-dark" ng-model="rcodeBtnText" ng-class="{'disabled':isabled}" ng-click="getRcode()">
+                {{rcodeBtnText}}
+              </button>
+            </div>
+          </div>
+          <p class="error" ng-show="userForm.userRcode.$dirty&&userForm.userRcode.$error.required">验证码不能为空！</p>
+          <label class="item item-input">
+            <input type="password" placeholder="创建密码" ng-model="user.passwd" name="userPasswd" required>
+          </label>
+          <p class="error" ng-show="userForm.userPasswd.$dirty&&userForm.userPasswd.$error.required">密码不能为空！</p>
+          <label class="item item-input">
+            <input type="password" placeholder="再次输入密码" ng-model="user.repasswd" name="userRepasswd" required repeat="userPasswd">
+          </label>
+          <p class="error" ng-show="userForm.userRepasswd.$dirty&&userForm.userRepasswd.$error.repeat">两次输入的密码不相等</p>
+        </div>
+        <div class="row responsive-sm" id="state-wrap">
+          <div class="col text-center">隐私声明
+          </div>
+          <div class="col">
+            <ion-checkbox ng-model="favor.isChecked" style="border:none;">我已同意</ion-checkbox>
+          </div>
+        </div>
+        <button class="button button-full button-dark" ng-click="register(userForm)">
+          注册
+        </button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

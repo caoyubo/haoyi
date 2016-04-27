@@ -1,0 +1,85 @@
+<ion-view view-title="提交订单" class="pay">
+  <ion-content class="pay-content">
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <div class="pay-list">
+      <div class="list">
+        <div class="item tit" ui-sref="address" nav-direction="forward">
+          <span class="pay-list_left_jade"></span>
+          <label>配送地址</label>
+          <a class="select-address"><span>选择配送地址</span>  <i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="item address">
+          {{address}}
+        </div>
+
+        <div class="item tit">
+          <span class="pay-list_left_jade"></span>
+          <label>货品清单</label>
+          <a href="#" class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="item tit">
+          <ul class="pay-goods-list">
+            <li class="pay-goods-item">
+              <div class="row">
+                <div class="col col-30">
+                  <div class="pay-goodsImg-panel"> <img ng-src="{{specInfo.imagepath}}"> </div>
+                </div>
+                <div class="col col-50">{{goodsInfo.goods.goodsname}}&nbsp;&nbsp;[{{specInfo.attrvaluename}}]</div>
+                <div class="col col-20" style="text-align: right;">X{{specAndNum.goodsNum}}</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="item tit">
+           <label>支付</label>
+           <span class="pay-text text-right">积分+现金</span>
+         </div>-->
+        <!--<div class="item tit" style="color:#f79592" ui-sref="integral-choose" nav-direction="forward" ng-repeat="payItem in payList">
+          {{payItem.name}}
+          <a class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>-->
+        <!--<div class="item tit" style="color:#2796c1" ui-sref="integral-choose" nav-direction="forward">
+          积分支付<span style="color: red;font-size: 12px;margin-left: 20px;">(已选积分{{bigDecimal}})</span>
+          <a class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="item tit" style="color:#2796c1">
+          现金支付 <span>￥233</span>
+          <a class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>-->
+
+        <div class="item tit">
+          <span class="pay-list_left_jade"></span>
+          <label>翡翠积分</label>
+        </div>
+        <div class="item tit" style="color:#00997F" ui-sref="integral-choose" nav-direction="forward">
+          消费翡翠  ￥{{total}}
+          <span style="float:right" ng-if="integral.freepoint">可用翡翠积分：￥{{integral.freepoint}}</span>
+          <span style="float:right" ng-if="!integral.freepoint">可用翡翠积分：￥0</span>
+        </div>
+
+        <div class="integral-pwd">
+          <div class="row">
+            <div class="col text-center">
+              <!--<p class="text-center"><input type="text" placeholder="输入支付密码"></p>-->
+              <p>商品金额：￥{{specInfo.shopprice}}</p>
+              <p>邮费：￥0</p>
+              <p>合计：￥{{total}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="item pay-money">
+          应付金额：￥{{total}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+  <div class="pay-comm">
+    <button class="button button-full active_button_fake_button" ng-click="submitOrder()">
+      确 定
+    </button>
+  </div>
+</ion-view>
+

@@ -1,0 +1,184 @@
+<ion-view view-title="购物车" class="cart" hide-back-button="true">
+
+    <ion-nav-buttons side="left">
+        <a class="button button-icon icon ion-ios-arrow-thin-left" ng-click="backNav()"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button icon button-clear" ng-class="{'hide':edit}" ng-click="choose_edit()"> 编辑
+            <!-- 使按钮点击可以弹出左侧边栏 -->
+        </button>
+        <button class="button icon button-clear" ng-class="{'hide':complet}" ng-click="choose_complet()"> 完成
+            <!-- 使按钮点击可以弹出左侧边栏 -->
+        </button>
+    </ion-nav-buttons>
+
+
+    <ion-content class="content cart-bg cart-content" direction="y" scrollbar-y="false">
+
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()" spinner="android">
+        </ion-refresher>
+
+        <!-- 购物车 -->
+        <div ng-show="isCartListNull">
+            <div class="list cart-list">
+                <a class="item item-icon-left" href="#">
+                    <i class="icon ion-ios-cart-outline offset-5"></i>
+                    <label class="offset-5 gray-font-color">您的购物车是空的,可以去...</label>
+                    <button class="btn-bg">逛逛商场</button>
+                </a>
+            </div>
+        </div>
+
+        <div ng-show="!isCartListNull" style="padding-bottom: 50px;">
+
+            <div class="cartList-panel">
+                <div class=" no-padding responsive-sm" ng-repeat="cartItem in cartList">
+                    <!--商店-->
+                    <ul class="list" style="width:100%;">
+                        <li class="item item-checkbox store-li">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox-input" ng-model="cartItem.isChecked"
+                                       ng-click="choose_allinShop(cartItem,cartItem.isChecked)">
+                            </label>
+                            <label> <img src="../img/store-logo.png" width="30"></label>
+                            <label> {{cartItem.shopname}}</label>
+                        </li>
+
+                        <li class="item item-checkbox" ng-repeat="goodsItem in cartItem.cartResps">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox-input" ng-model="goodsItem.isChecked"
+                                       ng-click="choose_each(cartItem,goodsItem.isChecked)">
+                            </label>
+
+                            <div class="list cart-list-margin no-padding">
+                                <div class="item item-thumbnail-left no-border "  >
+                                    <img src="{{imgUrl}}{{goodsItem.goodsimg}}" ui-sref="detail({'id':goodsItem.goodsid,'back':'tab.cart'})" nav-direction="forward">
+                                    <label class="cart-goods-des">
+                                        {{goodsItem.goodsname}}
+                                    </label>
+
+                                    <div class="margin-top-5">
+                                            <div class="row row-no-padding"  ui-sref="detail({'id':goodsItem.id,'back':'tab.cart'})" nav-direction="forward">
+                                                    ￥{{goodsItem.shopprice}}
+                                            </div>
+                                            <div class="cart-goods-num">
+                                                <i ng-click="minus(goodsItem)" class="ion-minus-round"> </i>
+                                                <input class="text-center" type="text" value="{{goodsItem.goodsnum}}">
+                                                <i ng-click="plus(goodsItem)" class="ion-plus-round"> </i>
+                                                <i class="icon ion-ios-trash-outline"
+                                                   style="font-size: 25px;"
+                                                   ng-click="delete(goodsItem.id)"></i>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <div class="col" style="font-size: 12px;">
+                        商品金额：<span style="color:red">233</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 商品列表 -->
+            <!--<div class="collect-goods-panel">
+              <ul class="collect-goods-list home-shop-list">
+                <li class="collect-goods-item ">
+                  <div class="home-shop-item-img">
+                    <img src="img/item_pic.jpg">
+                  </div>
+                  <div class="home-shop-item-other">
+                    <label class="goods-des">
+                      秋冬季加绒加厚男士休闲裤小脚男裤子纯棉修身直筒长裤韩版潮男装
+                    </label>
+                    <div class="baike-line"></div>
+                    <label class="goods-price">
+                      $45.00
+                    </label>
+                  </div>
+                </li>
+
+                <li class="collect-goods-item ">
+                  <div class="home-shop-item-img">
+                    <img src="img/item_pic.jpg">
+                  </div>
+                  <div class="home-shop-item-other">
+                    <label class="goods-des">
+                      秋冬季加绒加厚男士休闲裤小脚男裤子纯棉修身直筒长裤韩版潮男装
+                    </label>
+                    <div class="baike-line"></div>
+                    <label class="goods-price">
+                      $45.00
+                    </label>
+                  </div>
+                </li>
+                <li class="collect-goods-item ">
+                  <div class="home-shop-item-img">
+                    <img src="img/item_pic.jpg">
+                  </div>
+                  <div class="home-shop-item-other">
+                    <label class="goods-des">
+                      秋冬季加绒加厚男士休闲裤小脚男裤子纯棉修身直筒长裤韩版潮男装
+                    </label>
+                    <div class="baike-line"></div>
+                    <label class="goods-price">
+                      $45.00
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </div>-->
+        </div>
+    </ion-content>
+
+    <div class="cart-comm " ng-show="(!isCartListNull&&complet)">
+        <div class="row">
+            <div class="col col-12 ">
+                <label class="checkbox  " style="margin-top: 5px;">
+                    <input type="checkbox" class="checkbox-input cart-list-margin" ng-model="all.isChecked" ng-click="choose_all()">
+                </label>
+            </div>
+            <div class="col col-20">
+                全选
+            </div>
+            <div class="col col-33" style="font-weight: bold">
+                合计：￥{{totalPrice}}
+            </div>
+            <div class="col col-35">
+                <button type="button" class="cart-submit" ng-click="settlement()">
+                    提交订单
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-comm" ng-show="(!isCartListNull&&edit)">
+        <div class="row">
+            <div class="col col-12">
+                <label class="checkbox" style="margin-top: 5px;">
+                    <input type="checkbox" ng-model="all.isChecked" ng-click="choose_all()">
+                </label>
+            </div>
+            <div class="col col-20">
+                全选
+            </div>
+            <div class="col col-23">
+                <button type="button" class="share cart-submit energized-bg">
+                    分享
+                </button>
+            </div>
+            <div class="col col-25">
+                <button type="button" class="Attention cart-submit stable-bg">
+                    移入关注
+                </button>
+            </div>
+            <div class="col col-25 text-center">
+                <button type="button" class="delete cart-submit" ng-click="delete_batch()">
+                    删除
+                </button>
+            </div>
+        </div>
+    </div>
+</ion-view>

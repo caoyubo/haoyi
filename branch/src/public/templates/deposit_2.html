@@ -1,0 +1,29 @@
+<ion-view class="deposit" view-title="快速充值">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+  </ion-nav-buttons>
+
+  <ion-content class="deposit-content">
+    <div class="user-other">
+      <div class="list padding-top">
+        <div class="item item-icon-right"><a ui-sref="pay-shortcuts"><i class="icon ion-ios-arrow-right"></i><span class="calm">支付宝（134****5367）</span></a></div>
+      </div>
+
+      <div class="deposit-limit-notice" >
+        <p>一些限额说明</p>
+      </div>
+      <div class="list">
+        <a class="item" href="#">
+          <label class="item item-input">
+            <span class="input-label">金额</span>
+            <input type="text" placeholder="输入充值的金额">
+          </label>
+        </a>
+      </div>
+    </div>
+
+    <div class="row row-no-padding padding-top padding-left padding-right">
+      <button class="button button-full button-assertive" ui-sref="choose-account">充值</button>
+    </div>
+  </ion-content>
+</ion-view>

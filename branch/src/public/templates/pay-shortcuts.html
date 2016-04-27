@@ -1,0 +1,20 @@
+<ion-view view-title="选择快捷方式" class="pay-shortcuts">
+  <ion-content class="pay-shortcuts-content">
+    <div class="list">
+      <!--<a class="item item-icon-right" href="#/bankcard-choose" ui-sref="bankcard-choose">
+        银行卡
+        <i class="icon ion-ios-arrow-right"></i>
+      </a>
+      <a class="item" href="#/pay">
+        支付宝
+      </a>
+      <a class="item" href="#/pay">
+        微信支付
+      </a>-->
+
+      <a class="item" href="#/info" ng-repeat="item in payList">
+        {{item.name}}
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

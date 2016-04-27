@@ -1,0 +1,33 @@
+<ion-view class="bill" view-title="积分账单">
+   <!-- <ion-nav-buttons side="left">
+        <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+    </ion-nav-buttons>-->
+    <ion-content class="bill-content">
+        <div class="list">
+            <div class="item item-divider row">
+                <div class="text-center col-40">时间</div>
+                <div class="text-center  col-30">金额</div>
+                <div class="text-center col-30">状态</div>
+            </div>
+            <div class="item positive bill-detail row"  ng-repeat="(id,name) in items">
+                <div class="text-center col-40" style="color:#585858;line-height: 35px;"> {{name.createtime |
+                    date:'yyyy-MM-dd HH:mm:ss'}}
+                </div>
+                <div class="text-center col-30" style="color:#585858;line-height: 35px;">￥{{name.point}}</div>
+                <div class=" col-30 text-center" style="line-height: 35px;" ng-if="name.verify==0">未审</div>
+                <div class="col-30  text-center" style="line-height: 35px;" ng-if="name.verify==1">待审</div>
+                <div class="col-30  text-center" style="line-height: 35px;" ng-if="name.verify==6">一审通过</div>
+                <div class="col-30  text-center" style="line-height: 35px;" ng-if="name.verify==8">终审通过</div>
+                <div class=" col-30 text-center" style="line-height: 35px;" ng-if="name.verify==9">不通过</div>
+
+            </div>
+
+            <div ng-show="diamondBillCon.moredata" class="bottom_show"> 亲，数据加载完啦！</div>
+            <!-- ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  -->
+            <ion-infinite-scroll ng-if="!diamondBillCon.moredata" on-infinite="diamondBillCon.loadMore()"
+                                 distance="10%"></ion-infinite-scroll>
+
+
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-dark" ng-class="{true:'tabs-item-hide',false:''}[hideTabs]">
+  <!-- 首页 Tab -->
+  <ion-tab title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home assertive" ui-sref="tab.home">
+    <ion-nav-view name="tab-home" animation="slide-left-right"></ion-nav-view>
+  </ion-tab>
+  <!-- 分类 Tab -->
+  <ion-tab title="分类" icon-off="ion-ios-list-outline" icon-on="ion-ios-list assertive" ui-sref="tab.category">
+    <ion-nav-view name="tab-category" animation="slide-left-right"></ion-nav-view>
+  </ion-tab>
+  <!-- Chats Tab -->
+  <ion-tab title="发现" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart assertive" ui-sref="tab.find">
+    <ion-nav-view name="tab-find" animation="slide-left-right"></ion-nav-view>
+  </ion-tab>
+  <!-- 个人中心 Tab -->
+  <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person assertive" ng-click="isLogin('tab.user')">
+    <ion-nav-view name="tab-user" animation="slide-left-right"></ion-nav-view>
+  </ion-tab>
+</ion-tabs>
+
+
+<!--
+<ion-tabs class="tabs-icon-top tabs-dark">
+  &lt;!&ndash; 首页 Tab &ndash;&gt;
+  <ion-tab title="首页" icon-off="ion-ios-home-outline" icon-on="ion-ios-home assertive" ui-sref="home" nav-transition="none" nav-direction="enter">
+  </ion-tab>
+  &lt;!&ndash; 分类 Tab &ndash;&gt;
+  <ion-tab title="分类" icon-off="ion-ios-list-outline" icon-on="ion-ios-list assertive" ui-sref="category" nav-transition="none" nav-direction="enter">
+
+  </ion-tab>
+  &lt;!&ndash; Chats Tab &ndash;&gt;
+  <ion-tab title="购物车" icon-off="ion-ios-cart-outline" icon-on="ion-ios-cart assertive" ng-click="isLogin('cart')" nav-transition="none" nav-direction="enter">
+
+  </ion-tab>
+  &lt;!&ndash; 个人中心 Tab &ndash;&gt;
+  <ion-tab title="我" icon-off="ion-ios-person-outline" icon-on="ion-ios-person assertive" ng-click="isLogin('user')" nav-transition="none" nav-direction="enter">
+  </ion-tab>
+-->
+

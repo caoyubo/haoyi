@@ -1,0 +1,65 @@
+<ion-view view-title="店铺" class="store">
+  <ion-nav-buttons side="right">
+    <button class="button  icon ion-ios-cart-outline button-clear" ng-click="isLogin('cart')">   <!-- 使按钮点击可以弹出左侧边栏 -->
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="store-content">
+    <div class="store-info" style="">
+      <div class="row text-center">
+        <div class="col">
+          <img src="img/store-logo.png" style="width:70px;"/>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <h3 style="color: #ffffff;">{{storeInfo.shopName}}</h3>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col text-right padding-right" style="border-right:1px solid #ffffff;">
+          粉丝
+        </div>
+        <div class="col text-left padding-left">
+          {{fans}}
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col">
+          <button class="button button-small button-outline" ng-click="collectStore()">+收藏</button>
+          <button class="button button-small button-outline" ng-click="follow()" ng-if="select.status == '0'">+关注</button>
+          <button class="button button-small button-outline" ng-if="select.status == '1'" ng-click="canel()">取消关注</button>
+        </div>
+        <div class="col">
+          <button class="button button-small button-clear button-light icon-left ion-chatbubble">联系客服</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="row text-center row-no-padding businessCenter-tabs">
+      <li class="col"><a href="#" class="active">默认</a></li>
+      <li class="col"><a href="#">销量</a></li>
+      <li class="col"><a ui-sref="store-category({shopid:storeInfo.id})">分类筛选</a></li>
+    </ul>
+
+    <!-- 商品列表 -->
+    <div class="collect-goods-panel margin-top-10">
+      <ul class="collect-goods-list home-shop-list">
+        <li class="collect-goods-item" ng-repeat="goodsItem in goodsList" on-tap='myHref(goodsItem.goods.id)'>
+          <div class="home-shop-item-img">
+            <img ng-if="goodsItem.goods.goodsimg" src="{{imgUrl}}{{goodsItem.goods.goodsimg}}">
+            <img ng-if="!goodsItem.goods.goodsimg" src="img/item_pic.jpg">
+          </div>
+          <div class="home-shop-item-other">
+            <label class="goods-des">
+              {{goodsItem.goods.goodsname}}
+            </label>
+            <div class="baike-line"></div>
+            <label class="goods-price">
+              $45.00{{goodsItem.goods.shopprice}}
+            </label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </ion-content>
+</ion-view>

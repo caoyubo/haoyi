@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrapValidator.css">
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrapValidator.js"></script>
+</head>
+<body>
+
+<div style="margin-left: 10px;margin-right: 10px;">
+    <div class="login-title">
+        <h3 class="title">登录</h3>
+    </div>
+    <form novalidate="novalidate" name="userForm" id="userForm" class="form-horizontal">
+
+        <div class="form-group form-group-lg">
+            <div class="col-xs-12">
+                <input type="text" class="form-control" placeholder="账号" name="userName" id="userName">
+            </div>
+        </div>
+        <div class="form-group form-group-lg">
+            <div class="col-xs-12">
+                <input type="password" class="form-control" placeholder="密码" name="userPasswd" id="userPasswd">
+            </div>
+        </div>
+        <div class="form-group form-group-lg">
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 自动登录
+                    </label>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> 显示密码
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-lg">
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="login()">登录</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<script>
+    function login(){
+        var userName = $("#userName").val();
+        var userPasswd = $("#userPasswd").val();
+        if(userName == ""){
+            alert("账号不能为空！");
+            return false;
+        }else if(userPasswd == ""){
+            alert("密码不能为空！");
+            return false;
+        }else{
+
+            $.ajax({
+                url : "/user/login?username="+userName+"&passwd="+userPasswd,
+                type : "GET",
+                success : function(result){
+                    if (result != undefined){
+                        if (result.r != 1){
+                            alert(result.errmsg);
+                            return;
+                        }
+                        //重定向到个人中心
+                        window.location.href="";//"http://appapi.goodyesok.com";
+
+                    }else {
+                        alert("请求出错");
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
+

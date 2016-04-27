@@ -1,0 +1,30 @@
+<ion-view view-title="我的邀请人列表" >
+
+ <!-- <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+  </ion-nav-buttons>-->
+
+  <ion-content>
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+    <div class="row text-center" style="background:#fef1f1;" ng-if="references.list.length>0">
+      <div class="col">用户名称</div>
+      <div class="col">用户等级</div>
+      <div class="col">注册时间</div>
+    </div>
+
+    <div class="references-item" ng-if="references.list" ng-repeat="item in references.list" style="border-bottom: 1px solid #f4f4f4;color:#444;">
+      <div class="row text-center">
+        <div class="col">{{item.uname}}</div>
+        <div class="col">{{item.levelname}}</div>
+        <div class="col">{{item.createtime | date :"yyyy-MM-dd  hh:mm:ss" }}</div>
+      </div>
+    </div>
+
+    <div class="row text-center" ng-if="references.list.length==0">
+      <div class="col">
+        <p>暂时没有推荐人列表......</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

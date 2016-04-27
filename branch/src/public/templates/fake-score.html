@@ -1,0 +1,59 @@
+<ion-view class="fake-score" view-title="翡翠商城">
+  <ion-nav-buttons side="left">
+    <a href="javascript:history.back(-1)" class="button button-icon icon ion-ios-arrow-thin-left" nav-direction="back"></a>
+  </ion-nav-buttons>
+
+  <!--<div class="bar bar-subheader bar-stable">
+    <ul class="row text-center row-no-padding">
+      <li class="col"><a href="#" class="active">今日抢</a></li>
+      <li class="col"><a href="#">兑换预告</a></li>
+    </ul>
+  </div>
+-->
+  <ion-content class="fake-score-content">
+
+    <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+    </ion-refresher>
+
+    <div class="goods-list-panel margin-top-10">
+      <div class="list">
+        <a class="item item-thumbnail-left active-list" ng-repeat="item in goodsList">
+          <img ng-src="{{imgUrl}}{{item.goodsimg}}">
+          <span>{{item.goodsname}}</span>
+          <div class="active_main">
+            <div class="fake_price">{{item.shopprice}}</div>
+            <div class="active_main_left">
+              <div class="progress-bar shine">
+                <span style="width: 20%"></span>
+              </div>
+              <p>20%已订购</p>
+            </div>
+            <div class="active_main_right">
+              <input type="button" value="马上抢" class="active_button_fake_bg" ng-click="myHref(item.id)">
+            </div>
+          </div>
+        </a>
+
+
+       <!-- <a class="item item-thumbnail-left disable-user-behavior" ng-repeat="item in goodsList" >
+          <img ng-src="{{imgUrl}}{{item.goodsimg}}">
+          <h2 class="ng-binding">女式衬衫{{item.goodsname}}</h2>
+          <div class="row row-no-padding">
+            <div class="col col-80">
+              <p style="color: red" class="ng-binding">￥{{item.shopprice}}</p>
+            </div>
+            <div class="col col-20">
+              <button class="button button-small button-assertive" style="line-height:20px;min-height:20px;" ng-click="myHref(item.id)">马上抢</button>
+            </div>
+          </div>
+        </a>-->
+
+      </div>
+    </div>
+
+    <ion-infinite-scroll on-infinite="load_more();" distance="1%" immediate-check="true" ng-if="moreDataCanBeLoaded">
+    </ion-infinite-scroll>
+
+  </ion-content>
+
+</ion-view>

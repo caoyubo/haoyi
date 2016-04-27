@@ -1,0 +1,31 @@
+<ion-view class="code upgrade" view-title="升级成为{{levelInfo.name}}会员">
+  <ion-content class="code-content upgrade-content text-center">
+    <div class="padding-top">
+    <div class="row text-center" style="color:#ffffff;font-size:16px;font-weight:bold;">
+      <div class="col">
+        已支付金额:<span class="chongzhijine" style="">￥{{levelInfo.payedsum}}</span>
+      </div>
+    </div>
+    <div class="row text-center" style="color:#ffffff;font-size:16px;font-weight:bold;">
+      <div class="col">
+        未支付金额:<span class="chongzhijine" style="">￥{{levelInfo.lastpaysum}}</span>
+      </div>
+    </div>
+    </div>
+
+    <div class="upgrade-Articles margin-top-10">
+      <h4>条款说明</h4>
+      条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明条款说明
+    </div>
+    <div class="padding-top">
+      <div class="row">
+        <div class="col">
+          <button class="button" style="background:#fff9d7;width:70%;">取消</button>
+        </div>
+        <div class="col">
+          <button class="button" style="background:#f6e10c;width:70%;color:#b9351c;" ng-click="agree()">同意</button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

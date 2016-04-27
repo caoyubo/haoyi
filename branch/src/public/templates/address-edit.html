@@ -1,0 +1,102 @@
+<ion-view class="editAddress" view-title="收货地址管理">
+  <!--<ion-nav-buttons side="left">
+    <a href="javascript:history.back(-1)" class="button button-icon icon ion-ios-arrow-thin-left" nav-direction="back"></a>
+  </ion-nav-buttons>-->
+  <ion-content class="editAddress-content">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">收货人：</span>
+        <input type="text" ng-model="addressInfo.consignee" name="addressInfo.consignee">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">手机号码：</span>
+        <input type="text" ng-model="addressInfo.mobile" name="addressInfo.mobile">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">固定电话：</span>
+        <input type="text" ng-model="addressInfo.telephone" name="addressInfo.telephone">
+      </label>
+      <label class="item item-input" ng-click="openModal()">
+        <span class="input-label">所在地区：{{addressInfo.country}} {{addressInfo.province}} {{addressInfo.city}} {{addressInfo.district}}</span>
+        <input type="text">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">详细地址：</span>
+        <input type="text" ng-model="addressInfo.address" name="addressInfo.address">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">邮政编码：</span>
+        <input type="text" ng-model="addressInfo.zipCode" name="addressInfo.zipCode">
+      </label>
+    </div>
+
+    <div class="address-save">
+      <div class="row">
+        <div class="col" ng-if="id">
+          <button class="button button-assertive" ng-click="deleteAddress()">
+            删除
+          </button>
+        </div>
+        <div class="col" ng-if="id">
+          <button class="button button-dark" ng-click="updateAddress()">
+            修改
+          </button>
+        </div>
+        <div class="col" ng-if="!id">
+          <button class="button button-dark" ng-click="addAddress()">
+            保存并使用
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+
+  <!-- 选择所在地区的对话框 -->
+  <script id="address-modal.html" type="text/ng-template">
+    <ion-modal-view class="model-panel address-model">
+      <div class="row row-no-padding padding-left padding-right padding-top">
+        <div class="col col-80 text-center">
+         <h4>所在地区</h4>
+        </div>
+        <div class="col col-20 text-right">
+          <i class="icon ion-ios-close-outline" style="font-size:30px; color:#444" ng-click="closeModal()"></i>
+        </div>
+      </div>
+      <div style="width:100%;height:72%; overflow-y: scroll">
+        <div class="list">
+          <label class="item item-input item-select" style="height:40px">
+            <select style="width:100%;max-width:100%;" class="text-center" ng-model="selectedSite" ng-change="findNextArea(1,selectedSite)">
+              <option ng-repeat="item in country" value="{{item.id}}">{{item.regionName}}</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="list" ng-if="province.length>0">
+          <label class="item item-input item-select" style="height:40px">
+            <select style="width:100%;max-width:100%;" class="text-center" ng-model="selectedSite2" ng-change="findNextArea(2,selectedSite2)">
+              <option ng-repeat="item in province" value="{{item.id}}">{{item.regionName}}</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="list" ng-if="city.length>0">
+          <label class="item item-input item-select" style="height:40px">
+            <select style="width:100%;max-width:100%;" class="text-center" ng-model="selectedSite3" ng-change="findNextArea(3,selectedSite3)">
+              <option ng-repeat="item in city" value="{{item.id}}">{{item.regionName}}</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="list" ng-if="district.length>0">
+          <label class="item item-input item-select" style="height:40px">
+            <select style="width:100%;max-width:100%;" class="text-center" ng-model="selectedSite4" ng-change="findNextArea(4,selectedSite4)">
+              <option ng-repeat="item in district" value="{{item.id}}">{{item.regionName}}</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </ion-modal-view>
+  </script>
+</ion-view>

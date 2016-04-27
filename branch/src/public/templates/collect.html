@@ -1,0 +1,61 @@
+<ion-view class="collect" view-title="我的收藏">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+  </ion-nav-buttons>
+
+
+  <div class="bar bar-subheader bar-stable">
+    <ul class="row text-center row-no-padding">
+      <li class="col"><a href="#" ng-class="{'active':(sign ==0)}" ng-click="myCollect(0)">商品收藏</a></li>
+      <li class="col"><a href="#" ng-class="{'active':(sign ==1)}" ng-click="myCollect(1)">店铺收藏</a></li>
+    </ul>
+  </div>
+
+  <ion-content class="collect-content">
+    <div class="collect-goods-panel" ng-show="sign == 0">
+      <ul class="collect-goods-list home-shop-list">
+        <li class="collect-goods-item" ng-repeat="item in collectGoodsList">
+          <div class="home-shop-item-img">
+            <img src="{{imgUrl}}{{item.goodsResp.goodsimg}}">
+          </div>
+          <div class="home-shop-item-other">
+            <label class="goods-des">
+              {{item.goodsResp.goodsname}}
+            </label>
+            <div class="baike-line"></div>
+            <label class="goods-price">
+              ￥{{item.goodsResp.shopprice}}
+            </label>
+            <label style="float: right;font-size: 25px;padding-right: 15px;">
+              <i class="icon ion-ios-trash-outline assertive" ng-click="collect_del(item.goodsResp.id)"></i>
+            </label>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="collect-store-panel" ng-show="sign ==1">
+      <div class="list">
+        <a class="item item-thumbnail-left" ng-repeat="item in collectStoreList">
+          <img src="{{item.shopResponse.logo}}">
+          <h2></h2>
+          <p>{{item.shopResponse.description}}</p>
+          <label style="float: right;font-size: 25px;padding-right: 15px;">
+            <i class="icon ion-ios-trash-outline assertive" ng-click="collect_del(item.shopResponse.id)"></i>
+          </label>
+        </a>
+        <a class="item item-thumbnail-left" href="#">
+          <img src="img/item_pic.jpg">
+          <h2>Pretty Hate Machine</h2>
+          <p>Nine Inch Nails</p>
+          <label style="float: right;font-size: 25px;padding-right: 15px;">
+            <i class="icon ion-ios-trash-outline assertive" ></i>
+          </label>
+        </a>
+      </div>
+    </div>
+
+    <ion-infinite-scroll on-infinite="load_more();" distance="1%" ng-if="moreDataCanBeLoaded">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

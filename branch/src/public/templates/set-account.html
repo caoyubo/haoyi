@@ -1,0 +1,28 @@
+<ion-view class="user" view-title="账号设置" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+  </ion-nav-buttons>
+
+  <ion-content class="user-content">
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="account-security" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>账户与安全</a></li>
+      </ul>
+    </div>
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="address" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>我的收货地址</a></li>
+      </ul>
+    </div>
+    <div class="user-other">
+      <ul class="list padding-top">
+        <li class="item item-icon-right" ui-sref="card" nav-direction="forward"><a><i class="icon ion-ios-arrow-right"></i>绑定银行卡</a></li>
+      </ul>
+    </div>
+  </ion-content>
+  <div class="pay-comm">
+    <button class="button button-full button-assertive" ng-click="logout()">
+      退出
+    </button>
+  </div>
+</ion-view>

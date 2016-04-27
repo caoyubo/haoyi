@@ -1,0 +1,38 @@
+<ion-view class="message" view-title="消息中心">
+    <ion-nav-buttons side="left">
+        <a class="button button-icon icon ion-ios-arrow-thin-left" ui-sref="tab.user" nav-direction="back"></a>
+    </ion-nav-buttons>
+    <ion-content class="message-content">
+        <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+        </ion-refresher>
+        <div ng-if="bill.list">
+            <div class="message-panel" ng-repeat="item in bill.list" ui-sref="message-detail({id : item.id })">
+                <div class="row">
+                    <div class="col col-70">
+                        <p>{{item.title}}</p>
+                        <p class="message-con">{{item.content}}</p>
+                    </div>
+                    <div class="col col-30">
+                        <span>{{bill.createTime}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       <!-- <div class="message-panel">
+            <div class="row">
+                <div class="col col-30">
+                    <div class="img-panel">
+                        <img src="img/100-100.jpg">
+                    </div>
+                    <p>2016-03-15</p>
+                </div>
+                <div class="col col-70">代理商品1</div>
+            </div>
+        </div>-->
+
+        <ion-infinite-scroll on-infinite="load_more();" distance="1%" immediate-check="true" ng-if="moreDataCanBeLoaded">
+        </ion-infinite-scroll>
+
+    </ion-content>
+</ion-view>

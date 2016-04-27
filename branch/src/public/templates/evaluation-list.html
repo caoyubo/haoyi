@@ -1,0 +1,27 @@
+<ion-view class="evaluation" view-title="商品评价">
+    <ion-content class="evaluation-content">
+
+        <div class="list">
+            <a class="item item-avatar" ng-repeat="item in evaluationList">
+                <img src="img/mike.png">
+                <h2>{{item.userName}}&nbsp;&nbsp;&nbsp;{{item.score}}星</h2>
+                <p style="color:#cccccc;font-size: 10px;">{{item.createTime}} </p>
+                <div class="padding-top">
+                 <p style="color:#000000;">{{item.comment}}</p>
+                </div>
+            </a>
+
+           <!-- <a class="item item-avatar" href="#">
+                <img src="img/mike.png">
+                <h2>mike&nbsp;&nbsp;&nbsp;5星</h2>
+                <p style="color:#cccccc;font-size: 10px;">2016.03.21  颜色分类：浅蓝  尺码：M</p>
+                <div class="padding-top">
+                    <p style="color:#000000;"></p>
+                </div>
+            </a>-->
+        </div>
+
+        <ion-infinite-scroll on-infinite="load_more();" distance="1%" immediate-check="true" ng-if="moreDataCanBeLoaded">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

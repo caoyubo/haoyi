@@ -1,0 +1,78 @@
+<ion-view view-title="提交订单" class="pay">
+    <ion-content class="pay-content">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()" spinner="android">
+        </ion-refresher>
+        <div class="pay-list">
+            <div class="list">
+                <div class="item tit" ui-sref="address" nav-direction="forward">
+                    <span class="pay-list_left"></span>
+                    <label>配送地址</label>
+                    <a class="select-address"><span>选择配送地址</span> <i class="icon ion-ios-arrow-right"></i></a>
+                </div>
+                <div class="item address">
+                    {{address}}
+                </div>
+
+                <div class="item tit">
+                    <span class="pay-list_left"></span>
+                    <label>货品清单</label>
+                </div>
+                <div class="item tit">
+                    <ul class="pay-goods-list">
+                        <li class="pay-goods-item">
+                            <div class="row">
+                                <div class="col col-30">
+                                    <div class="pay-goodsImg-panel"><img ng-src="{{specInfo.imagepath}}"></div>
+                                </div>
+                                <div class="col col-50">{{goodsInfo.goods.goodsname}}&nbsp;&nbsp;[{{specInfo.attrvaluename}}]</div>
+                                <div class="col col-20" style="text-align: right;">X{{specAndNum.goodsNum}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="item tit">
+                    <span class="pay-list_left"></span>
+                    <label>支付</label>
+                    <span class="pay-text text-right">
+                        <dd style="color: #601986;">钻石积分<img src="../img/zs.png" width="15"> 99.00</dd>
+                        <dd>+</dd>
+                        <dd style="color: #00A0E9;">现金支付￥12.00</dd>
+                    </span>
+                </div>
+                <div class="item tit" style="color:#f79592" ui-sref="integral-choose" nav-direction="forward"
+                     ng-repeat="payItem in payList">
+                    {{payItem.name}}
+                    <a class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+                </div>
+                <div class="item tit" style="color:#601986" ui-sref="integral-choose" nav-direction="forward">
+                    积分支付<img src="../img/zs.png" width="15">
+                    <span style="color: #601986;font-size: 12px;margin-left: 20px;">(已选积分{{bigDecimal}})</span>
+                </div>
+                <div class="item tit" style="color:#2796c1">
+                    现金支付 <span>￥{{specInfo.shopprice}}</span>
+                </div>
+
+                <!--<div class="integral-pwd">
+                    <div class="row">
+                        <div class="col text-center">
+                            <p>商品金额：￥{{specInfo.shopprice}}</p>
+                            <p>邮费：￥0</p>
+                            <p>合计：￥{{total}}</p>
+                        </div>
+                    </div>
+                </div>-->
+
+                <div class="item pay-money">
+                    应付金额：￥{{total}}
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="pay-comm">
+        <button class="button button-full button-assertive" ng-click="submitOrder()">
+            确定
+        </button>
+    </div>
+</ion-view>

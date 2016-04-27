@@ -1,0 +1,74 @@
+<ion-view view-title="假积分支付" class="pay" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a href="javascript:history.back(-1)" class="button button-icon icon ion-ios-arrow-thin-left" nav-direction="back"></a>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <button class="button  icon ion-ios-home-outline button-clear" ui-sref="tab.home">   <!-- 使按钮点击可以弹出左侧边栏 -->
+    </button>
+  </ion-nav-buttons>
+  <ion-content class="pay-content">
+    <div class="pay-list">
+      <div class="list">
+        <div class="item tit">
+          <label>配送地址</label>
+          <a href="#/address" class="select-address"><span>选择配送地址</span>  <i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="item address">
+          广东省广州市天河区珠江新城华夏路31号
+        </div>
+
+        <div class="item tit">
+          <label>货品清单</label>
+          <a href="#" class="select-address"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+        <div class="item tit">
+          <ul class="pay-goods-list">
+            <li class="pay-goods-item">
+              <div class="row">
+                <div class="col">
+                  <div class="pay-goodsImg-panel"> <img src="img/100-100.jpg"> </div>
+                </div>
+                <div class="col">商品1</div>
+                <div class="col" style="text-align: right;">X1</div>
+              </div>
+            </li>
+            <li class="pay-goods-item">
+              <div class="row">
+                <div class="col">
+                  <div class=" pay-goodsImg-panel"> <img src="img/100-100.jpg"> </div>
+                </div>
+                <div class="col">商品1</div>
+                <div class="col" style="text-align: right;">X1</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+        <ul class="list">
+          <li class="item item-toggle">
+            假积分
+            <label class="toggle toggle-assertive">
+              <input type="checkbox">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+
+
+        <div class="item pay-money">
+          应付金额：￥
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+
+  <div class="pay-comm">
+    <button class="button button-full button-assertive" ui-sref="pay-code">
+      提交订单
+    </button>
+  </div>
+</ion-view>

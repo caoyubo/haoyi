@@ -1,0 +1,46 @@
+<ion-view view-title="发现" class="find">
+    <ion-nav-buttons side="left">
+        <button class="button  icon ion-navicon button-clear" ng-click="openModal()"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button  icon ion-ios-cart-outline button-clear" ng-click="isLogin('cart')"></button>
+    </ion-nav-buttons>
+    <ion-content class="find_content">
+        <ion-refresher pulling-text="下拉刷新"	on-refresh="doRefresh()" spinner="android">
+        </ion-refresher>
+        <div class="row" ng-repeat="item in list">
+          <div class="col">
+              <a href="#" ng-href="{{item.resLink}}" style="width:100%;">
+                 <!-- <img ng-src="{{imgUrl}}{{item.resPath}}" style="width:100%;">-->
+                  <img ng-src="http://imagehaoyi.nzlm.cn/7/1303/145/7-1303-145-10015134607310674.png" style="width:100%;">
+              </a>
+          </div>
+        </div>
+    </ion-content>
+    <script id="my-modal.html" type="text/ng-template">
+        <ion-modal-view class="model-panel">
+            <ion-header-bar class="bar-clear">
+                <a class="button " ng-click="closeModal();"></a>
+                <!--<h1 class="title">快速导航</h1>-->
+            </ion-header-bar>
+            <div class="row responsive-sm" style="margin-top: 50px;">
+                <div class="col" ui-sref="login" ng-click="closeModal();">你好，登录</div>
+                <div class="col" ng-click="closeModal();">消息提醒</div>
+                <div class="col" ng-click="closeModal();">我的验证码</div>
+            </div>
+            <div class="row responsive-sm">
+                <div class="col" ui-sref="order" ng-click="closeModal();">我的订单</div>
+                <div class="col">我的账户</div>
+                <div class="col">快速充值</div>
+
+            </div>
+            <div class="row responsive-sm">
+                <div class="col" ng-click="closeModal();">好一客服</div>
+                <div class="col">法律条款</div>
+                <div class="col">关于我们</div>
+                <div class="col">应用程序评价</div>
+                <div class="col">退出</div>
+            </div>
+        </ion-modal-view>
+    </script>
+</ion-view>

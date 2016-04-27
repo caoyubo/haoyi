@@ -1,0 +1,18 @@
+<ion-view view-title="选择积分" class="integral-choose">
+  <ion-content class="integral-choose-content">
+    <div class="row responsive-sm">
+      <div class="col choose-text">
+        输入需要消费的积分
+      </div>
+      <div class="col text-center choose-text">
+        <input type="text" class="integral-input" ng-model="diam.chooseDiam" style="padding-left:10px;"/>
+      </div>
+      <span class="choose-text  text-align" >可用钻石积分<img src="../img/zsh.png"  width="15">  ￥{{diamond.availBal}}</span>
+    </div>
+  </ion-content>
+  <div class="pay-comm">
+    <button class="button button-full button-assertive"  ng-click="submitDiam()">
+      确定
+    </button>
+  </div>
+</ion-view>

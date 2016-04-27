@@ -1,0 +1,56 @@
+{
+  "code":0,
+  "num":7,
+  "cartList" : [
+    {
+      "shopid" : 1,
+      "shopname" :"",
+      "goodsList" : [
+        {
+          "id":0,
+          "shopid":1,
+          "img":"img/item_2.jpg",
+          "description":"2015新品冬季运动休闲男士气垫跑步鞋韩版潮流男鞋子板鞋棉鞋潮鞋",
+          "cost":"45.50"
+        },
+        {
+          "id":1,
+          "shopid":1,
+          "img":"img/item_2.jpg",
+          "description":"2015新品冬季运动休闲男士气垫跑步鞋韩版潮流男鞋子板鞋棉鞋潮鞋",
+          "cost":"67.50"
+        }
+      ]
+    },
+    {
+      "shopid" : 3,
+      "shopname" :"",
+      "goodsList" : [
+        {
+          "id":3,
+          "shopid":3,
+          "img":"img/item_2.jpg",
+          "description":"2015新品冬季运动休闲男士气垫跑步鞋韩版潮流男鞋子板鞋棉鞋潮鞋",
+          "cost":"145.50"
+        },
+        {
+          "id":4,
+          "shopid":3,
+          "img":"img/item_2.jpg",
+          "description":"2015新品冬季运动休闲男士气垫跑步鞋韩版潮流男鞋子板鞋棉鞋潮鞋",
+          "cost":"23.50"
+        },
+        {
+          "id": 5,
+          "shopid":3,
+          "img": "img/item_2.jpg",
+          "description": "2015新品冬季运动休闲男士气垫跑步鞋韩版潮流男鞋子板鞋棉鞋潮鞋",
+          "cost": "78.50"
+        }
+      ]
+    }
+  ]
+
+}
+
+
