@@ -1,0 +1,100 @@
+
+.address-content{
+
+}
+.edit-address{
+  float: left;
+  border-right: 1px solid #f7f7f7;
+  margin-right: 10px;
+}
+
+.edit-address .button{
+  background: #ffffff;
+  margin:0;
+  padding:0;
+}
+
+.address-content .item-radio input:checked + .radio-content .item-content .edit-address .button{
+  background: #f7f7f7;
+}
+
+.address-content .item-radio input:checked + .radio-content .item-content{
+  background: #ffffff;
+}
+
+
+.default{
+  display: inline-block;
+  background: #ff605c;
+  color: #ffffff;
+  width:40px;
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 3px;
+}
+
+.address-content .item-radio .item-content{
+  padding:10px 49px 10px 0px;
+}
+
+.address-content .item{
+  border: none;
+  margin:0;
+}
+
+.address-list .address-selected .edit-address .button{
+  background: #f7f7f7;
+}
+
+.address-item{
+  border-bottom:1px solid #cccccc;
+}
+
+.address-content .item-radio .radio-icon{
+  color:red;
+}
+
+.address .address-add{
+  position: fixed;
+  width:100%;
+  bottom: 0px;
+  left: 0px;
+  height: 45px;
+  background: red;
+}
+
+.address .address-add .button{
+  padding:0;
+  margin: 0;
+}
+
+
+.address-model {
+  opacity: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: auto;
+  z-index: 10;
+  overflow: hidden;
+  min-height: 60%;
+  height: 60%;
+  width: 100%;
+}
+
+
+.address-list{
+  list-style: none;
+  border-top: 1px solid #cccccc;
+  border-bottom:1px solid #cccccc;
+}
+
+.address-list:after{
+  display: block;
+  visibility: visible;
+  content: "";
+  clear: both;
+}
+
+
