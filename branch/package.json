@@ -1,0 +1,48 @@
+{
+  "name": "haoyi-app-api",
+  "description": "Tiger project!",
+  "version": "1.0.0",
+  "author": "kam <kam@tiger.com>",
+  "devDependencies": {
+    "async": "^1.2.1",
+    "body-parser": "~1",
+    "connect-redis": "^2.3.0",
+    "cookie-parser": "~1.0.1",
+    "ejs": "~0.8.5",
+    "express": "4.12.4",
+    "express-ejs-layouts": "^1.1.0",
+    "express-session": "latest",
+    "formidable": "1.0.17",
+    "gm": "1.18.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-express-server": "^0.5.1",
+    "hiredis": "^0.4.0",
+    "load-grunt-tasks": "^3.3.0",
+    "log4js": "^0.6.25",
+    "morgan": "^1.5.3",
+    "multiparty": "4.1.2",
+    "redis": "^0.12.1",
+    "request": "^2.57.0",
+    "should": "^8.2.1",
+    "underscore": "^1.8.3"
+  },
+  "keywords": [],
+  "dependencies": {
+    "crypto": "0.0.3",
+    "should": "^8.2.1",
+    "supertest": "^1.1.0"
+  },
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC"
+}
