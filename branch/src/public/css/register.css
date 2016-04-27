@@ -1,0 +1,8 @@
+
+.user-info .row,.user-info .row .col{
+  padding:0;
+}
+
+.user-info .item,.user-info .row{
+  margin-bottom: 10px;
+}

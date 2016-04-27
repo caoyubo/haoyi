@@ -1,0 +1,96 @@
+body{
+
+}
+
+/*登录*/
+#user-info label{
+
+}
+.login-title .title{
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+#check-wrap,#check-wrap .col{
+  padding-left: 0;
+}
+
+#autologin,#showpwd{
+  border-width: 0;
+}
+
+/*注册*/
+#state-wrap{
+  margin: 0;
+  margin-top:10px;
+  padding-left:0px;
+  padding-top:0;
+  padding-bottom:0;
+}
+
+#state-wrap .col{
+  margin-bottom: 0;
+  padding-left:0px;
+  font-size: 12px;
+  color:#cccccc;
+}
+
+#state-wrap .checkbox input, .checkbox-icon{
+  width:20px;
+  height:20px;
+}
+
+#state-wrap .item-checkbox .checkbox{
+  left:0px;
+
+}
+
+#state-wrap .checkbox input:after, .checkbox-icon:after{
+  width:12px;
+  height:4px;
+}
+
+#state-wrap .item-checkbox{
+  padding-left:40px;
+}
+
+#state-wrap .item-content{
+  font-size: 14px;
+}
+
+#state-wrap .item{
+  padding-top:5px;
+  color:#cccccc;
+}
+
+#user-info .item{
+  margin-bottom: 10px;
+}
+
+ p.error{
+  color:red;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+
+ .logining{
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 12;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0,0,0,.4);
+   visibility: hidden;
+   opacity: 0;
+   -webkit-transition: .1s opacity linear;
+   transition: .1s opacity linear;
+ }
+
+.logining.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+

@@ -1,0 +1,286 @@
+.margin-top-10{
+  margin-top: 10px;
+}
+
+.detail{
+  color:#444;
+  background: #e5e5e5;
+}
+
+.detail-content{
+  color:#444;
+  width:100%;
+  margin-bottom: 50px;
+}
+
+.detail-goods{
+  background: #ffffff;
+}
+.detail_jade{
+  margin: 0px;
+  display: block;
+  height: 30px;
+}
+.detail_jade img{
+   float: left;
+}
+.detail_jade span{
+   float: left;
+  line-height: 30px;
+  height: 30px;
+  padding-left: 10px;
+  color: #026DB8;
+}
+.duihuan{
+  color:#00997F ;
+
+}
+.detail-goods h2{
+    margin: 0px;
+   font-size: 16px;
+}
+.detail-content .row{
+  position: relative;
+  background: #ffffff;
+}
+
+/*.detail-goodsDec{
+  float: left;
+  width:80%;
+}
+
+.detail-goods{
+  float: left;
+  width:20%;
+}*/
+
+.detail-list{
+  width:100%;
+  position: relative;
+  color: #ffffff;
+}
+
+.detail-list a{
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.detail-tabs{
+  height:50px;
+}
+
+.detail-list a .detail-icon{
+  height:30px;
+  font-size: 20px;
+}
+
+.detail-list a .detail-icon{
+ margin-top: -8px;
+}
+
+.detail-list a p{
+  margin: 0;
+  line-height: 20px;
+}
+
+
+.detail-tabs .addCart{
+  height:50px;
+  line-height: 50px;
+}
+
+.cart-comm .row .col button.addCart{
+  height: 50px;
+  line-height: 50px;
+}
+
+
+.detail .cart-comm{
+  bottom:0px;
+}
+
+.detail-goods-evaluate p{
+  color: #595757;
+  margin-bottom: 4px;
+}
+
+.detail-goods-evaluate .allgoods{
+  font-size: 16px;
+}
+
+.detail-row-1 img{
+  width:30px;
+  vertical-align:middle;
+  padding-right: 5px;
+}
+
+.detail-row-2{
+    position: relative;
+}
+
+.detail-row-2 p{
+  width:100%;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+.detail-row-2 img{
+  width:50px;
+  text-align: center;
+}
+
+.detail-row-3{
+  font-size:20px;
+}
+
+
+.detail-tabs{
+  opacity:1;
+}
+
+
+.detail-Transport .col .responsive-sm .col{
+  margin: 0px;
+}
+
+
+.detail-content .presale_btn{
+  width:70%;
+  height: 45px;
+  background: #a92a09;
+  color: #ffffff;
+  border:none;
+  padding-left: 8%;
+}
+
+.detail-content .ion-btn{
+  position:absolute;
+  display: inline-block;
+  width:45px;
+  height:45px;
+  background: url("../img/presale_ion_btn.png") center no-repeat;
+  background-size: 70%;
+  right:18%;
+}
+
+
+
+.spec-panel .model-panel{
+  opacity: 1;
+  background: #ffffff;
+}
+
+.modal-backdrop-bg{
+  background: #000000;
+  opacity: 0.7;
+}
+
+
+.spec-model{
+  opacity: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top:auto;
+  z-index: 10;
+  overflow: hidden;
+  min-height: 75%;
+  height: 75%;
+  width: 100%;
+}
+
+.spec-model .spec-img-panel{
+  width:100%;
+  height:auto;
+}
+
+.spec-model .spec-img-panel img{
+  width:100%;
+}
+
+.spec-model .spec-info{
+  padding-left: 10px;
+}
+
+.spec-model .spec-info p{
+  padding-bottom: 0px;
+  font-size: 12px;
+}
+
+.spec-model .spec-list-panel{
+  position: relative;
+  width:100%;
+}
+
+.spec-model .spec-list-panel{
+  position: relative;
+  width:100%;
+  margin:auto;
+  text-align:center;
+  border-bottom:1px solid #f1f2f3;
+  padding-bottom: 10px;
+}
+
+.spec-model .spec-list-panel ul:after{
+  display: block;
+  visibility: visible;
+  content: "";
+  clear: both;
+}
+
+
+.spec-model .spec-tit{
+  line-height: 40px;
+  margin-top: 10px;
+}
+
+.spec-model .spec-list-panel ul li{
+  padding:5px 10px;
+  line-height: 20px;
+  border-radius: 8px;
+  background: #f1f2f3;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  font-size: 12px;
+}
+
+.spec-model .spec-list-panel ul li.active{
+  background: #eb6100;
+}
+
+.buy-num-panel a{
+  display: inline-block;
+  padding:5px 15px;
+  line-height: 20px;
+  background: #f1f2f3;
+  font-size: 16px;
+  font-weight: bold;
+}
+.buy-num-panel span{
+  display: inline-block;
+  padding:5px 15px;
+  line-height: 20px;
+}
+
+
+.spec_btn .col .button.button-full{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.spec-model .row{
+  margin-top: 0px;
+}
+
+.detail-content .yushou{
+  width:100%;
+  border:1px solid #cccccc;
+  height:180px;
+  font-size: 12px;
+  color: #444;
+  padding-left: 3%;
+}
+

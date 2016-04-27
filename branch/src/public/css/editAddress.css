@@ -1,0 +1,26 @@
+
+
+.editAddress-content .input-label{
+  width:auto;
+  max-width: none;
+  font-size: 14px;
+  color: #9e9e9e;
+}
+
+.editAddress-content .item-input{
+  font-size: 12px;
+  color: #9e9e9e;
+}
+
+.address-save{
+  width:100%;
+  margin: auto;
+  padding:0;
+  text-align: center;
+}
+
+.address-save .button{
+  width:90%;
+  /*height:35px;
+  min-height: 35px;*/
+}

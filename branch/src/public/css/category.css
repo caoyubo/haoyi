@@ -1,0 +1,153 @@
+
+.category-search {
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.category-search .input-label {
+    width: 10%;
+    max-width: 60px;
+}
+
+.category-header .item-input-wrapper .search {
+    width: 100%;
+    background: #eee;
+}
+
+.category-panel-left {
+    margin-top: 75px;
+}
+
+.category-panel-left .item {
+    background: #fff;
+}
+
+.category-panel-right {
+    width: 100%;
+    margin-top: 76px;
+    background: #ddd;
+    /*position: relative;*/
+}
+
+.col-offset-4 {
+    margin-left: 4%;
+}
+
+.searchHot {
+    width: 95%;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.searchHot h2 {
+    color: #E50012;
+    font-size: 28px;
+    padding-left: 10%;
+    padding-top: 10%;
+    margin-bottom: 0px;
+}
+
+.searchHot h2 i {
+    color: #000;
+    float: right;
+    margin-right: 10px;
+}
+
+.searchHot p {
+    padding-left: 10%;
+    height: 30px;
+    line-height: 25px;
+}
+
+.category-list {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.category-second-list h4 {
+    color: #9B9B9B;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.category-third-list .category-third-item {
+    position: relative;
+    float: left;
+    width: 33.3333333%;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+}
+
+.images-panel {
+    width: 96%;
+    margin-left: 2%;
+    text-align: center;
+}
+
+.images-panel img {
+    display: block;
+    width: 100%;
+
+}
+
+.category-third-item p {
+    width: 96%;
+    margin-left: 2%;
+    text-align: center;
+    font-size: 12px;
+    color: #5D5D5D;
+}
+
+.list-tab-bg {
+    background-color: #F5F5F5;
+}
+
+.list-tab-bg.selected {
+    background-color: #ddd;
+    border-left: 5px solid #EE7300;
+}
+
+.class-font-style ion-item {
+    overflow: visible;
+}
+
+.class-font-style ion-item {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/*.category-panel{
+  position:fixed;
+  height:100%;
+  width:100%;
+  margin: 0px;
+  padding:0px;
+}
+
+.category-panel:after{
+  display: block;
+  visibility: visible;
+  content: "";
+  clear: both;
+}
+
+.category-panel-left{
+  width:25%;
+  position: relative;
+  float: left;
+  height: 100%;
+}
+
+.category-panel-right{
+  width:75%;
+  position: relative;
+  float: left;
+}*/
+
+
+
+
+

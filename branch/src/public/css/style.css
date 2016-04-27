@@ -1,0 +1,66 @@
+/* Empty. Add your own CSS if you like */
+
+/* 抽奖  */
+.lottery-top{
+    background: url("../img/lottery.jpg")  no-repeat;
+    background-size: 100% 100%;
+    height: 260px;
+}
+.lottery-content{
+    background: #FFF9D7;
+    font-size: 14px;
+}
+.lottery-table{
+    border-collapse:collapse;
+    width:100%;
+    text-align: center;
+}
+.bottom_show {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    clear: both;
+    color: #aaa;
+
+}
+.lottery-table td,.lottery-table th{
+    border:1px solid #f1f2f3;
+    padding:5px 0px;
+}
+
+.lottery-content .directions{
+    color: #8699a4;
+    font-size: 12px;
+}
+
+.lottery-content .review .col{
+    color:red;
+    line-height: 50px;
+}
+.lottery-content .review .col i{
+    font-size: 30px;
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+.lottery-content .review .col span{
+   display: inline-block;
+    line-height: 25px;
+    padding:0px 10px;
+    border:2px solid red;
+    margin: 0px 10px;
+    border-radius:15px;
+    word-spacing: 15px;
+    letter-spacing: 5px
+
+}
+.lottery-review-content .list{
+    margin-bottom: 0px;
+}
+.lottery-review-content .item{
+    padding-top:10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color:#444;
+}

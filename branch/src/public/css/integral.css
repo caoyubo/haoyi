@@ -1,0 +1,147 @@
+/*我的积分*/
+.integral,.withdraw,.deposit{
+  background: #dddddd;
+  font-size: 14px;
+}
+
+.integral-notice{
+  font-size: 12px;
+  background: #f6af93;
+  color: #d5662f;
+}
+
+.integral-panel{
+  color:#ffffff;
+  background: #ea5714;
+  background-image:-webkit-linear-gradient(to top, #ea5714, #f38f03);
+  background-image:linear-gradient(to top, #ea5714, #f38f03);
+  background-image:-o-linear-gradient(to top, #ea5714, #f38f03);
+  background-image:-ms-linear-gradient(to top, #ea5714, #f38f03);
+}
+
+.integral-panel .responsive-sm .col{
+  margin-bottom: 3px;
+}
+
+.integral-panel p{
+  margin-bottom: 5px;
+}
+
+
+/*  提现  */
+
+.withdraw-info{
+  background: #ffffff;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.withdraw-content .responsive-sm .col{
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.withdraw-info .col input{
+  float: left;
+  width:80%;
+  border:1px solid #eeeeee;
+}
+.withdraw-info .col span{
+  display: block;
+  float: left;
+  width: 10%;
+  line-height: 34px;
+}
+
+.withdraw-deposit{
+  border-top:1px solid #eeeeee;
+  background: #ffffff;
+  margin-bottom: 8px;
+}
+
+.withdraw-directions{
+  margin-bottom: 18px;
+}
+
+
+/*选择账户*/
+.chooseAccount{
+}
+
+.chooseAccount-content .item{
+  font-size: 14px;
+}
+
+.bill-content .item{
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bill-detail div{
+  float: left;
+}
+
+.bill-detail div.circle{
+  height:30px;
+  line-height: 30px;
+  width:25px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+
+}
+
+.bill-detail div p{
+  margin:0;
+  padding:0;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.bill-detail:after{
+  display: block;
+  visibility: visible;
+  content: '';
+  clear: both;
+}
+
+
+/*充值*/
+
+.deposit-content{
+
+}
+
+.deposit-limit-notice{
+  width:96%;
+  padding-left: 2%;
+  padding-right:2%;
+  color: #909090;
+  font-size: 12px;
+
+}
+
+.deposit .input-label{
+  width:20%;
+}
+
+.integral-choose-content .integral-input{
+  width:100%;
+  height:40px;
+  border:1px solid #949191;
+  margin: auto;
+}
+
+.integral-panel .whatIsIntegral{
+  display: inline-block;
+  width:30px;
+  height:30px;
+  border-radius:15px;
+  background:#ffffff;
+  color:#fba365;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+}

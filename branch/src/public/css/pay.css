@@ -1,0 +1,148 @@
+.pay{
+  font-size: 14px;
+}
+.pay-content{
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.pay-content a{
+  text-decoration: none;
+}
+
+.pay-list{
+  width:100%;
+  position: relative;
+}
+.pay-list .select-address {
+  float: right;
+  color:#9e9e9e;
+  font-size: 14px;
+}
+
+.pay-list .address{
+  color:#9e9e9e;
+}
+
+.pay-list .tit{
+  font-size: 14px;
+}
+.pay-list_left{
+  background: #601986;
+  width: 5px;
+  height: 20px;
+  clear: both;
+  float: left;
+  margin-right: 15px;
+}
+.pay-list_left_jade{
+  background: #00997F;
+  width: 5px;
+  height: 20px;
+  clear: both;
+  float: left;
+  margin-right: 15px;
+}
+
+.pay-list .select-address span{
+}
+
+.pay-list .select-address i{
+  font-weight: bold;
+}
+
+.pay-goods-list{
+  width:100%;
+  position: relative;
+}
+
+.pay-goods-item{
+  width:100%;
+  height: 60px;
+  position: relative;
+}
+.pay-goods-item .row,.pay-goods-item .row .col{
+  margin:0;
+  padding:0;
+}
+
+.pay-goods-item .row .col{
+  line-height: 60px;
+  color:#9e9e9e;
+}
+.pay-goodsImg-panel{
+  width:60px;
+  height:60px;
+}
+
+.pay-goodsImg-panel img{
+  display: block;
+  width:100%;
+}
+
+.pay-method{
+  color:#9e9e9e;
+}
+
+.pay-content .item-radio .item-content{
+  padding-top:10px;
+  padding-bottom: 10px;
+  color:#9e9e9e;
+  font-size: 14px;
+}
+
+.pay-content .item-radio .radio-icon{
+  padding-top:0;
+  padding-bottom: 0;
+}
+
+.pay-money{
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pay-comm{
+  width:100%;
+  position: fixed;
+  left: 0;
+  bottom:0px;
+  opacity: 0.9;
+}
+
+.pay-comm .button{
+  margin: 0;
+  padding:0;
+
+}
+
+.pay-text{
+  display: inline-block;
+  float: right;
+  text-align: right;
+  font-size: 12px;
+}
+.pay-text dd{
+  float: left;
+}
+
+
+.bar .buttons span.previous-title{
+  display: none;
+}
+
+.integral-pwd{
+  background: #e5e5e5;
+  color:#444;
+  font-size: 12px;
+}
+
+.integral-pwd input{
+  border:1px solid #cccccc;
+  width:60%;
+  margin:auto;
+  padding-left: 10px;
+}
+
+
+
